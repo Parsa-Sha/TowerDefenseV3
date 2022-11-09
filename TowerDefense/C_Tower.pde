@@ -58,10 +58,11 @@ class Tower {
       break;
     }
     
-    if (mpc(10) && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10 && cash >= (type+1)*10) {
+    if (mouseReleased && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10 && cash >= (type+1)*10) {
       cd = 0;
       cash -= (type+1)*10;
       towerMode = PLACED;
+      test++;
       x = mouseX;
       y = mouseY;
     }

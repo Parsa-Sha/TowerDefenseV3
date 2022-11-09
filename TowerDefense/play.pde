@@ -4,6 +4,8 @@ float timer = 0;
 int wave = 0;
 int globalCD = 0;
 
+int test=0;
+
 void play() {
   background(0, 255, 0);
   image(bg[difficulty], width/2, height/2);
@@ -17,8 +19,7 @@ void play() {
   if (lives <= 0) mode = GAMEOVER;
   image(hpimg[lives], 850, 50); // Lives image
 
-  println(mpc(10), cash);
-  
+  println(mouseReleased, cash, test);
   
   strokeWeight(0);
   fill(palette[difficulty][1]);

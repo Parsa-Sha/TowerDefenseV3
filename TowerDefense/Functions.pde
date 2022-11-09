@@ -13,15 +13,14 @@ PVector polarToLinear(float a, float m) {
   return linear;
 }
 
-int mpcCooldown = 0;
+boolean mouseReleased;
+boolean wasPressed;
 
-boolean mpc(int cd) {
-  if (mousePressed && mpcCooldown >= cd) {
-    mpcCooldown = 0;
-    return true;
-  } else {
-    mpcCooldown++;
-    return false;
-   
+void pmr() {
+  mouseReleased = false;
+  if (mousePressed) wasPressed = true;
+  if (wasPressed && mousePressed == false) {
+    mouseReleased = true;
+    wasPressed = false;
   }
 }

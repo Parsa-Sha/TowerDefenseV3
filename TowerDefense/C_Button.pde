@@ -109,7 +109,7 @@ class Button {
   }
 
   boolean press() {
-    if (hover() && mousePressed) return true;
+    if (hover() && mouseReleased) return true;
     else return false;
   }
 

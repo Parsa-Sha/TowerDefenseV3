@@ -66,6 +66,7 @@ void setup() {
 // ===================== DRAW ===========================
 
 void draw() {
+  pmr();
   if (mode == INTRO) {
     intro();
   } else if (mode == PLAY) {
