@@ -39,8 +39,8 @@ class Tower {
       stroke(0);
       strokeWeight(3);
       fill(0, 0, 255);
-      if (mode == PLACED) square(x, y, 50);
-      else if (mode == PLACING) square(mouseX, mouseY, 50);
+      if (towerMode == PLACED) square(x, y, 50);
+      else if (towerMode == PLACING) square(mouseX, mouseY, 50);
       break;
 
     case 1:
@@ -62,7 +62,6 @@ class Tower {
       cd = 0;
       cash -= (type+1)*10;
       towerMode = PLACED;
-      test++;
       x = mouseX;
       y = mouseY;
     }

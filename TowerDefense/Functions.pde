@@ -24,3 +24,10 @@ void pmr() {
     wasPressed = false;
   }
 }
+
+boolean isPlacing() {
+  for (int i = 0; i < towers.size(); i++) {
+    if (towers.get(i).towerMode == exampleTower.PLACING) return true;
+  }
+  return false;
+}

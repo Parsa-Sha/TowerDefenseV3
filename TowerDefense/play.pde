@@ -4,7 +4,6 @@ float timer = 0;
 int wave = 0;
 int globalCD = 0;
 
-int test=0;
 
 void play() {
   background(0, 255, 0);
@@ -18,8 +17,10 @@ void play() {
 
   if (lives <= 0) mode = GAMEOVER;
   image(hpimg[lives], 850, 50); // Lives image
-
-  println(mouseReleased, cash, test);
+  coinGif.show();
+  textSize(50);
+  fill(palette[difficulty][2]);
+  text("CASH: " + cash, 200, 40);
   
   strokeWeight(0);
   fill(palette[difficulty][1]);
@@ -27,8 +28,8 @@ void play() {
   waveButton.show();
   if (waveButton.press()) nextWave();
   addTower.show();
-  if (addTower.press()) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
-  coinGif.show();
+  if (addTower.press() && !isPlacing()) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
+  
 }
 
 void nextWave() {
