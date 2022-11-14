@@ -11,7 +11,7 @@ final int GAMEOVER = 3;
 int mode = INTRO;
 
 int lives = 3;
-int cash = 100;
+int cash = 20;
 int difficulty = 0;
 
 float rotation = 0;
@@ -26,6 +26,7 @@ color[][] palette;
 Button start;
 Button waveButton;
 Button addTower;
+Button addSniper;
 
 //Collections of objects
 Node[] nodes;

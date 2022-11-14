@@ -42,6 +42,7 @@ class Mob {
       exampleBullet = bullets.get(i);
       if (dist(x, y, exampleBullet.x, exampleBullet.y) < (s/2) + (exampleBullet.s/2)) {
         hp = 0;
+        cash += 5;
         exampleBullet.hp = 0;
       }
     }
