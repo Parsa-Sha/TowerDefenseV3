@@ -54,9 +54,9 @@ class Tower {
     if (towerMode == PLACED) square(x, y, 50);
     else if (towerMode == PLACING) square(mouseX, mouseY, 50);
 
-    if (mouseReleased && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10 && cash >= (type+1)*10) {
+    if (mouseReleased && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10) {
       cd = 0;
-      cash -= (type+1)*10;
+      cash -= 10;
       towerMode = PLACED;
       x = mouseX;
       y = mouseY;
@@ -77,6 +77,25 @@ class Tower {
   }
   
   void sniperDisplay() {
+    stroke(0);
+    strokeWeight(3);
+    fill(100, 100, 150);
+    if (towerMode == PLACED){
+      pushMatrix();
+      translate(x, y);
+      rotate();
+      triangle(-25, -25, 25, -25, 0, 50);
+    } else if (towerMode == PLACING) {
+      triangle(mouseX-25, mouseY-25, mouseX+25, mouseY-25, mouseX, mouseY+50);
+    }
+    
+    if (mouseReleased && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10 && cash >= (type+1)*10) {
+      cd = 0;
+      cash -= 15;
+      towerMode = PLACED;
+      x = mouseX;
+      y = mouseY;
+    }
   
   }
   

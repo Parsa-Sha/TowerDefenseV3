@@ -27,6 +27,7 @@ Button start;
 Button waveButton;
 Button addTower;
 Button addSniper;
+Button addIncinedary;
 
 //Collections of objects
 Node[] nodes;
@@ -137,8 +138,11 @@ void makeButtons() {
   waveButton = new Button("NEXT\nWAVE", 950, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
 
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
-  addTower = new Button("TOWER", 50, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
-
+  addTower = new Button("GUN", 50, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
+  addSniper = new Button("SNIPE", 150, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
+  addIncinedary = new Button("FIRE", 250, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
+  
+  
   //GAMEOVER - Reset
 }
 

@@ -28,8 +28,11 @@ void play() {
   waveButton.show();
   if (waveButton.press()) nextWave();
   addTower.show();
-  if (addTower.press() && !isPlacing()) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
-  
+  if (addTower.press() && !isPlacing() && cash >= 10) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
+  addSniper.show();
+  if (addSniper.press() && !isPlacing() && cash >= 15) towers.add(new Tower(1, mouseX, mouseY, 0, 100));
+  addIncinedary.show();
+  if (addIncinedary.press() && !isPlacing() && cash >= 20) towers.add(new Tower(2, mouseX, mouseY, 0, 100));
 }
 
 void nextWave() {
