@@ -80,11 +80,9 @@ class Tower {
     stroke(0);
     strokeWeight(3);
     fill(100, 100, 150);
+    
     if (towerMode == PLACED){
-      pushMatrix();
-      translate(x, y);
-      rotate();
-      triangle(-25, -25, 25, -25, 0, 50);
+      triangle(x-25, y-25, x+25, y-25, x, y+50);
     } else if (towerMode == PLACING) {
       triangle(mouseX-25, mouseY-25, mouseX+25, mouseY-25, mouseX, mouseY+50);
     }
@@ -100,11 +98,32 @@ class Tower {
   }
   
   void sniperShoot() {
-    
+    if (mobs.size() != 0) {
+      cd++;
+      stroke(255*cd/threshold, 0, 0, 255*cd/threshold);
+      strokeWeight(3*cd/threshold);
+      line(x, y, mobs.get(0).x, mobs.get(0).y);
+      
+      if (cd == threshold) {
+        mobs.get(0).hp = 0;
+      }
+    } else cd = 0;
   }
   
   void incinedaryDisplay() {
-  
+    stroke(0);
+    strokeWeight(3);
+    fill(200, 0, 0, 150);
+    if (towerMode == PLACED) circle(x, y, 50);
+    else if (towerMode == PLACING) circle(mouseX, mouseY, 50);
+
+    if (mouseReleased && boundingBox(width/2, 325, width, 650) && towerMode == PLACING && globalCD > 10) {
+      cd = 0;
+      cash -= 10;
+      towerMode = PLACED;
+      x = mouseX;
+      y = mouseY;
+    }
   }
   
   void incinedaryShoot() {

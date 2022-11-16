@@ -32,11 +32,9 @@ boolean isPlacing() {
   return false;
 }
 
-float theta(float x1, float y1, float x2, float y2) {
+PVector xydist(float x1, float y1, float x2, float y2) {
   float x = x2 - x1;
   float y = y2 - y1;
-  float ratio = y/x;
-  
-  
-  return 0;
+  PVector xy = new PVector(x, y);
+  return xy;
 }

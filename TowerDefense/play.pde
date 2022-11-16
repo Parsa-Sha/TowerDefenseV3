@@ -22,17 +22,7 @@ void play() {
   fill(palette[difficulty][2]);
   text("CASH: " + cash, 200, 40);
   
-  strokeWeight(0);
-  fill(palette[difficulty][1]);
-  rect(width/2, 725, width, 150);
-  waveButton.show();
-  if (waveButton.press()) nextWave();
-  addTower.show();
-  if (addTower.press() && !isPlacing() && cash >= 10) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
-  addSniper.show();
-  if (addSniper.press() && !isPlacing() && cash >= 15) towers.add(new Tower(1, mouseX, mouseY, 0, 100));
-  addIncinedary.show();
-  if (addIncinedary.press() && !isPlacing() && cash >= 20) towers.add(new Tower(2, mouseX, mouseY, 0, 100));
+  toolbar();
 }
 
 void nextWave() {
@@ -42,6 +32,20 @@ void nextWave() {
       mobs.add(new Mob(-i*50, height/2, 50, 1, 1));
     }
   }
+}
+
+void toolbar() {
+  strokeWeight(0);
+  fill(palette[difficulty][1]);
+  rect(width/2, 725, width, 150);
+  waveButton.show();
+  if (waveButton.press()) nextWave();
+  addTower.show();
+  if (addTower.press() && !isPlacing() && cash >= 10) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
+  addSniper.show();
+  if (addSniper.press() && !isPlacing() && cash >= 15) towers.add(new Tower(1, mouseX, mouseY, 0, 200));
+  addIncinedary.show();
+  if (addIncinedary.press() && !isPlacing() && cash >= 20) towers.add(new Tower(2, mouseX, mouseY, 0, 100));
 }
 
 void mobAct() {
