@@ -28,6 +28,7 @@ Button waveButton;
 Button addTower;
 Button addSniper;
 Button addIncinedary;
+Button[] difficultyButtons;
 
 //Collections of objects
 Node[] nodes;
@@ -35,10 +36,11 @@ Node exampleNode;
 Mob exampleMob;
 Tower exampleTower;
 Bullet exampleBullet;
+AoE_Ring exampleRing;
 ArrayList<Mob> mobs = new ArrayList<Mob>();
 ArrayList<Tower> towers = new ArrayList<Tower>();
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-
+ArrayList<AoE_Ring> aoeRings = new ArrayList<AoE_Ring>();
 
 
 //Images and Gifs
@@ -141,7 +143,8 @@ void makeButtons() {
   addTower = new Button("GUN", 50, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
   addSniper = new Button("SNIPE", 150, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
   addIncinedary = new Button("FIRE", 250, 750, 75, 75, palette[difficulty][2], palette[difficulty][1], palette[difficulty][1], palette[difficulty][0], 3, 1);
-  
+  difficultyButtons = new Button[3];
+  for (int i = 0; i < 3; i++) difficultyButtons[i] = new Button(0, 0, 100, 100);
   
   //GAMEOVER - Reset
 }

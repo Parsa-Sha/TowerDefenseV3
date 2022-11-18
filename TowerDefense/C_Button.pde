@@ -27,6 +27,13 @@ class Button {
   int hoverWeight, hoverNotWeight;
   int buttonType;
   String label;
+  
+  Button(float X, float Y, float W, float H) {
+    x = X;
+    y = Y;
+    w = W;
+    h = H;
+  }
 
   Button(PImage Image, float X, float Y, float W, float H, int strokeHoverWeight, int strokeNotHoverWeight) {
     x = X;

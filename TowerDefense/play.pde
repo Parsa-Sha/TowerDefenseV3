@@ -12,6 +12,7 @@ void play() {
   mobAct();
   towerAct();
   bulletAct();
+  ringsAct();
 
   globalCD++;
 
@@ -29,7 +30,10 @@ void nextWave() {
   if (mobs.size() == 0) {
     wave++;
     for (int i = 0; i < wave; i++) {
-      mobs.add(new Mob(-i*50, height/2, 50, 1, 1));
+      if (wave >= 4 && i == 3){
+        mobs.add(new Mob(-i*50, height/2, 100, 5, 1));
+      } else if (wave >= 7 && (i == 5|| i == 6)) mobs.add(new Mob(-i*50, height/2, 20, 2, 3)); 
+      else mobs.add(new Mob(-i*50, height/2, 50, 3, 2));
     }
   }
 }
@@ -41,7 +45,7 @@ void toolbar() {
   waveButton.show();
   if (waveButton.press()) nextWave();
   addTower.show();
-  if (addTower.press() && !isPlacing() && cash >= 10) towers.add(new Tower(0, mouseX, mouseY, 0, 100));
+  if (addTower.press() && !isPlacing() && cash >= 10) towers.add(new Tower(0, mouseX, mouseY, 0, 50));
   addSniper.show();
   if (addSniper.press() && !isPlacing() && cash >= 15) towers.add(new Tower(1, mouseX, mouseY, 0, 200));
   addIncinedary.show();
@@ -52,7 +56,8 @@ void mobAct() {
   for (int i = 0; i < mobs.size(); i++) {
     exampleMob = mobs.get(i);
     exampleMob.act();
-    if (exampleMob.hp == 0) {
+    
+    if (exampleMob.hp <= 0) {
       mobs.remove(i);
       i--;
     }
@@ -70,9 +75,20 @@ void bulletAct() {
   for (int i = 0; i < bullets.size(); i++) {
     exampleBullet = bullets.get(i);
     exampleBullet.show();
-    if (exampleBullet.hp == 0) {
+    if (exampleBullet.hp <= 0) {
       bullets.remove(i);
       i--;
     }
   }
 }
+
+void ringsAct() {
+  for (int i = 0; i < aoeRings.size(); i++) {
+    exampleRing = aoeRings.get(i);
+    exampleRing.show();
+    if (exampleRing.hp <= 0) {
+      aoeRings.remove(i);
+      i--;
+    }
+  }
+} 

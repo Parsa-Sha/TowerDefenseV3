@@ -1,7 +1,7 @@
 //This function draws the INTRO screen.
 
 void intro() {
-  background(100);
+  background(bg[difficulty]);
   
   pushMatrix();
   translate(width/2, height/2-50);
@@ -12,12 +12,19 @@ void intro() {
     rotate(rotation + (i*TWO_PI/3));
     translate(0, 100);
     rotate(-(rotation + (i*TWO_PI/3)));
-    image(mobimg[2-i], 0, 0, 100, 100);  
+    
+    difficultyButtons[i].x = 0;
+    difficultyButtons[i].y = 0;
+    println(difficultyButtons[i].hover());
+    
+    if (difficultyButtons[i].press()) difficulty = i;
+    image(mobimg[2-i], 0, 0, 100, 100);
     popMatrix();
   }
   
   rotation += TWO_PI/200;
   popMatrix();
+  
   
   start.show();
   if (start.press()) mode = PLAY;

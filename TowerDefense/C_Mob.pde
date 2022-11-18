@@ -41,11 +41,12 @@ class Mob {
     for (int i = 0; i < bullets.size(); i++) {
       exampleBullet = bullets.get(i);
       if (dist(x, y, exampleBullet.x, exampleBullet.y) < (s/2) + (exampleBullet.s/2)) {
-        hp = 0;
-        cash += 5;
+        hp--;
         exampleBullet.hp = 0;
       }
     }
+    
+    if (hp <= 0) cash += 5;
   }
 
   void display() {
@@ -55,6 +56,7 @@ class Mob {
   void damage() {
     if (x > width) { // If reached the end, lower lives + destroy mob
       lives--;
+      cash += 10;
       hp = 0;
     }
   }
