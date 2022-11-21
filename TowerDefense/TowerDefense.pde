@@ -31,7 +31,7 @@ Button addIncinedary;
 Button[] difficultyButtons;
 
 //Collections of objects
-Node[] nodes;
+Node[][] nodes;
 Node exampleNode;
 Mob exampleMob;
 Tower exampleTower;
@@ -151,22 +151,46 @@ void makeButtons() {
 
 void makeNodes() {
   //Plot the nodes on the map
-  nodes = new Node[10];
+  nodes = new Node[3][10];
   
-  nodes[0] = new Node(100, 400, 0, -1);
-  nodes[1] = new Node(100, 200, 1, 0);
-  nodes[2] = new Node(300, 200, 0, 1);
-  nodes[3] = new Node(300, 400, -1, 1);
-  nodes[4] = new Node(100, 600, 1, 0);
-  nodes[5] = new Node(300, 600, 1, -1);
-  nodes[6] = new Node(500, 400, 0, -1);
-  nodes[7] = new Node(500, 200, 1, 0);
-  nodes[8] = new Node(900, 200, -1, 1);
-  nodes[9] = new Node(500, 600, 1, -0);
+  nodes[0][0] = new Node(100, 400, 0, -1);
+  nodes[0][1] = new Node(100, 200, 1, 0);
+  nodes[0][2] = new Node(300, 200, 0, 1);
+  nodes[0][3] = new Node(300, 400, -1, 1);
+  nodes[0][4] = new Node(100, 600, 1, 0);
+  nodes[0][5] = new Node(300, 600, 1, -1);
+  nodes[0][6] = new Node(500, 400, 0, -1);
+  nodes[0][7] = new Node(500, 200, 1, 0);
+  nodes[0][8] = new Node(900, 200, -1, 1);
+  nodes[0][9] = new Node(500, 600, 1, -0);
+  
+  nodes[1][0] = new Node(100, 400, 0, -1);
+  nodes[1][1] = new Node(100, 100, 1, 0);
+  nodes[1][2] = new Node(200, 100, 0, 1);
+  nodes[1][3] = new Node(200, 400, 1, 0);
+  nodes[1][4] = new Node(200, 600, 0, -1);
+  nodes[1][5] = new Node(300, 600, 1, -1);
+  nodes[1][6] = new Node(500, 400, 0, -1);
+  nodes[1][7] = new Node(500, 200, 1, 0);
+  nodes[1][8] = new Node(900, 200, -1, 1);
+  nodes[1][9] = new Node(500, 600, 1, -0);
+  
+  nodes[2][0] = new Node(100, 400, 0, -1);
+  nodes[2][1] = new Node(100, 200, 1, 0);
+  nodes[2][2] = new Node(300, 200, 0, 1);
+  nodes[2][3] = new Node(300, 400, -1, 1);
+  nodes[2][4] = new Node(100, 600, 1, 0);
+  nodes[2][5] = new Node(300, 600, 1, -1);
+  nodes[2][6] = new Node(500, 400, 0, -1);
+  nodes[2][7] = new Node(500, 200, 1, 0);
+  nodes[2][8] = new Node(900, 200, -1, 1);
+  nodes[2][9] = new Node(500, 600, 1, -0);
+  
   
 }
 
 void makePath() {
+  
   stroke(100);
   strokeWeight(10);
   line(0, 400, 100, 400);
@@ -180,4 +204,6 @@ void makePath() {
   line(500, 200, 900, 200);
   line(900, 200, 500, 600);
   line(500, 600, width, 600);
+  
+  
 }

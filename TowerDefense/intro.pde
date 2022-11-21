@@ -1,30 +1,21 @@
 //This function draws the INTRO screen.
 
+PVector offset = new PVector(0, 100);
+
 void intro() {
   background(bg[difficulty]);
-  
-  pushMatrix();
-  translate(width/2, height/2-50);
-  
+
   
   for (int i = 0; i < 3; i++) {
-    pushMatrix();
-    rotate(rotation + (i*TWO_PI/3));
-    translate(0, 100);
-    rotate(-(rotation + (i*TWO_PI/3)));
+    offset.rotate(TWO_PI/3);
     
-    difficultyButtons[i].x = 0;
-    difficultyButtons[i].y = 0;
-    println(difficultyButtons[i].hover());
-    
-    if (difficultyButtons[i].press()) difficulty = i;
-    image(mobimg[2-i], 0, 0, 100, 100);
-    popMatrix();
+    difficultyButtons[i].x = width/2 + offset.x;
+    difficultyButtons[i].y = height/2 + offset.y;
+
+    if (difficultyButtons[2-i].press()) difficulty = i;
+    image(mobimg[2-i], width/2 + offset.x, height/2 + offset.y, 100, 100);
   }
-  
-  rotation += TWO_PI/200;
-  popMatrix();
-  
+  offset.rotate(TWO_PI/200);
   
   start.show();
   if (start.press()) mode = PLAY;

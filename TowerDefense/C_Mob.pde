@@ -30,8 +30,8 @@ class Mob {
   }
 
   void turn() {
-    for (int i = 0; i < nodes.length; i++) {
-      exampleNode = nodes[i];
+    for (int i = 0; i < nodes[difficulty].length; i++) {
+      exampleNode = nodes[difficulty][i];
       if (dist(exampleNode.x, exampleNode.y, x, y) < 2) {
         vx = exampleNode.vx * sp;
         vy = exampleNode.vy * sp;
