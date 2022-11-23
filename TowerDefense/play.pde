@@ -13,7 +13,8 @@ void play() {
   towerAct();
   bulletAct();
   ringsAct();
-
+  ifDifficultyChanges();
+  
   globalCD++;
 
   if (lives <= 0) mode = GAMEOVER;
@@ -25,6 +26,8 @@ void play() {
   
   toolbar();
 }
+
+
 
 void nextWave() {
   if (mobs.size() == 0) {

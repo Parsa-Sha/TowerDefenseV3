@@ -54,10 +54,6 @@ class AoE_Ring {
       cd++;
     }
     
-    if (cd == 500) hp = 0;
-    
-    
-    
-    
+    if (cd == 500) hp = 0; 
   }
 } // End of AoE_Ring class

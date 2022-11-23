@@ -110,6 +110,13 @@ class Button {
     drawImg();
     drawTxt();
   }
+  
+  void updateColours(color cStrokeHover, color cStrokeNotHover, color cFillPressed, color cFillNotPressed) {
+    cHover = cStrokeHover;
+    cPressed = cFillPressed;
+    cNotHover = cStrokeNotHover;
+    cNotPressed = cFillNotPressed;
+  }
 
   boolean hover() {
     return boundingBox(x, y, w, h);

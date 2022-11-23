@@ -17,6 +17,8 @@ void intro() {
   }
   offset.rotate(TWO_PI/200);
   
+  ifDifficultyChanges();
+  
   start.show();
   if (start.press()) mode = PLAY;
 }

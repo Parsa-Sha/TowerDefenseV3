@@ -166,24 +166,24 @@ void makeNodes() {
   nodes[1][0] = new Node(100, 400, 0, -1);
   nodes[1][1] = new Node(100, 100, 1, 0);
   nodes[1][2] = new Node(200, 100, 0, 1);
-  nodes[1][3] = new Node(200, 400, 1, 0);
-  nodes[1][4] = new Node(400, 400, 0, -1);
+  nodes[1][3] = new Node(200, 600, 1, 0);
+  nodes[1][4] = new Node(400, 600, 0, -1);
   nodes[1][5] = new Node(400, 200, 1, 0);
-  nodes[1][6] = new Node(500, 400, 0, -1);
-  nodes[1][7] = new Node(500, 200, 1, 0);
-  nodes[1][8] = new Node(900, 200, -1, 1);
-  nodes[1][9] = new Node(500, 600, 1, -0);
+  nodes[1][6] = new Node(600, 200, 0, 1);
+  nodes[1][7] = new Node(600, 500, 1, 0);
+  nodes[1][8] = new Node(850, 500, 0, -1);
+  nodes[1][9] = new Node(850, 400, 1, 0);
 
-  nodes[2][0] = new Node(100, 400, 0, -1);
-  nodes[2][1] = new Node(100, 200, 1, 0);
-  nodes[2][2] = new Node(300, 200, 0, 1);
-  nodes[2][3] = new Node(300, 400, -1, 1);
-  nodes[2][4] = new Node(100, 600, 1, 0);
-  nodes[2][5] = new Node(300, 600, 1, -1);
-  nodes[2][6] = new Node(500, 400, 0, -1);
-  nodes[2][7] = new Node(500, 200, 1, 0);
-  nodes[2][8] = new Node(900, 200, -1, 1);
-  nodes[2][9] = new Node(500, 600, 1, -0);
+  nodes[2][0] = new Node(0, 400, 1, 0);
+  nodes[2][1] = new Node(50, 400, 0, -1);
+  nodes[2][2] = new Node(50, 100, 1, 0);
+  nodes[2][3] = new Node(500, 100, 0, 1);
+  nodes[2][4] = new Node(500, 600, -1, 0);
+  nodes[2][5] = new Node(200, 600, 0, -1);
+  nodes[2][6] = new Node(200, 400, 1, 0);
+  nodes[2][7] = new Node(800, 400, 0, -1);
+  nodes[2][8] = new Node(800, 200, 1, 0);
+  nodes[2][9] = new Node(-500, 400, 0, 0);
 }
 
 void makePath() {
@@ -231,12 +231,18 @@ void makePath() {
     stroke(100);
     strokeWeight(10);
     noFill();
-
-
-
-
-
-
+    beginShape();
+    vertex(0, 400);
+    vertex(50, 400);
+    vertex(50, 100);
+    vertex(500, 100);
+    vertex(500, 600);
+    vertex(200, 600);
+    vertex(200, 400);
+    vertex(800, 400);
+    vertex(800, 200);
+    vertex(width, 200);
+    endShape();
     break;
   }
 }
