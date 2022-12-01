@@ -27,8 +27,6 @@ void play() {
   toolbar();
 }
 
-
-
 void nextWave() {
   if (mobs.size() == 0) {
     wave++;

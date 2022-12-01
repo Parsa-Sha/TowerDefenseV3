@@ -14,6 +14,7 @@ int lives = 3;
 int cash = 20;
 int difficulty = 0;
 
+
 float rotation = 0;
 
 //Pallette
@@ -75,8 +76,6 @@ void draw() {
     intro();
   } else if (mode == PLAY) {
     play();
-  } else if (mode == BUILD) {
-    build();
   } else if (mode == GAMEOVER) {
     gameOver();
   }

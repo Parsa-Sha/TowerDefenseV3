@@ -4,9 +4,28 @@ PVector offset = new PVector(0, 100);
 
 void intro() {
   background(bg[difficulty]);
-
   
-  for (int i = 0; i < 3; i++) {
+  spinningSlimes();
+  variableReset();
+  ifDifficultyChanges();
+  
+  start.show();
+  if (start.press()) mode = PLAY;
+}
+
+
+void variableReset() {
+  wave = 0;
+  lives = 3;
+  cash = 20;
+  gmovrTimer = 0;
+  mobs = new ArrayList<Mob>();
+  towers = new ArrayList<Tower>();
+  aoeRings = new ArrayList<AoE_Ring>();
+}
+
+void spinningSlimes() {
+    for (int i = 0; i < 3; i++) {
     offset.rotate(TWO_PI/3);
     
     difficultyButtons[i].x = width/2 + offset.x;
@@ -16,9 +35,4 @@ void intro() {
     image(mobimg[2-i], width/2 + offset.x, height/2 + offset.y, 100, 100);
   }
   offset.rotate(TWO_PI/200);
-  
-  ifDifficultyChanges();
-  
-  start.show();
-  if (start.press()) mode = PLAY;
 }
